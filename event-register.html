@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HOPE 3.0</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!---->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/animate.css"> <!--for sliding animations effects-->
+    <link rel="stylesheet" href="css/css/owl.carousel.min.css"> <!--for slider effect-->
+    <link rel="stylesheet" href="css/css/owl.theme.default.min.css"> <!--for slider effects-->
+    <link rel="stylesheet" href="css/css/magnific-popup.css"> <!--for pop-up effects-->
+    <link rel="stylesheet" href="css/css/aos.css"> <!-- for animate on scroll-->
+    <link rel="stylesheet" href="css/css/bootstrap-datepicker.css"> 
+    <link rel="stylesheet" href="css/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/css/flaticon.css">
+    <link rel="stylesheet" href="css/css/icomoon.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+    <link rel="stylesheet" href="css/css/style.css"> <!--main-->
+
+    <!--font-->
+    <link href='https://fonts.googleapis.com/css?family=Shrikhand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Yeseva One' rel='stylesheet'>
+</head>
+
+<body>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="backToTop" class="back-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+
+        <!-- Toggler/collapsing button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Centered Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about-us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#event-schedule">Event Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support-us.html">Support Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+  <section class="eventdt-hero-section">
+    <div class="eventdt-container">
+      <h1 class="eventdt-hero-title">Event Registration</h1>
+      <nav class="eventdt-breadcrumb">
+        <a href="index.html">Home</a> / Event Registration
+      </nav>
+    </div>
+  </section>
+
+<!-- Registration Form Section -->
+<section id="registration" class="registration-section">
+    <div class="reg-container">
+      <div class="form-box">
+        <h2>Event Registration Form</h2>
+        <form id="eventForm" onsubmit="return validateForm()">
+          <!-- Full Name -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+
+        <!-- Participant Type -->
+        <label for="participantType">Participant Type:</label>
+        <select id="participantType" name="participantType" required>
+          <option value="">Select...</option>
+          <option value="student">Student</option>
+          <option value="public">Public</option>
+        </select>
+
+        <!-- Matric No and School (for students) -->
+        <div id="studentFields" style="display: none;">
+          <label for="matricNo">Matric No: (E.g. XXXXXX)</label>
+          <input type="number" id="matricNo" name="matricNo" placeholder="Enter your matric no">
+          
+          <label for="school">School:</label>
+          <input type="text" id="school" name="school" placeholder="Enter your school">
+        </div>
+
+        <!-- Identification Card (for public) -->
+        <div id="publicFields" style="display: none;">
+          <label for="idCard">Identification Card: (E.g. XXXXXX-XX-XXXX)</label>
+          <input type="number" id="idCard" name="idCard" placeholder="Enter your identification card number">
+        </div>
+
+        <!-- Email Address -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+        <!-- Contact Number -->
+        <label for="contactNumber">Contact Number: (E.g. XXX-XXXXXXX)</label>
+        <input type="number" id="contactNumber" name="contactNumber" required placeholder="Enter your contact number">
+
+        <!-- Event Selection -->
+        <label for="event">Select Event:</label>
+        <select id="event" name="event" required>
+          <option value="">Select...</option>
+          <option value="online-talk">Online Talk - RM 2</option>
+          <option value="movie-night">Movie Night - RM 3</option>
+          <option value="blood-donation">Blood Donation - Free</option>
+          <option value="kite-flying">Kite Flying - RM 5</option>
+        </select>
+
+          <!-- Event Fee and QR Code -->
+        <div id="eventFee" class="fee-section" style="display: none;">
+            <p><strong>Event Fee:</strong> <span id="feeAmount"></span></p>
+          </div>
+
+          <!-- QR Code Always Visible -->
+          <div class="qr-section">
+            <img id="qrCode" src="images/dummyQr.png" alt="QR Code for Payment">
+          </div>
+
+          <!-- Receipt Upload -->
+          <label for="receipt">Upload Payment Receipt:</label>
+          <input type="file" id="receipt" name="receipt" required>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-register">Register</button>
+
+          <div id="successMessage" class="success-message" style="display: none;">
+            Registration successful! Thank you for registering.
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+ 
+
+      <!-- Footer Section -->
+        <footer class="footer-section">
+            <div class="container text-center">
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            </div>
+        </footer>
+
+    <!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="js/script.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

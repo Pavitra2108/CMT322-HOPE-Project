@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HOPE 3.0</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!---->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/animate.css"> <!--for sliding animations effects-->
+    <link rel="stylesheet" href="css/css/owl.carousel.min.css"> <!--for slider effect-->
+    <link rel="stylesheet" href="css/css/owl.theme.default.min.css"> <!--for slider effects-->
+    <link rel="stylesheet" href="css/css/magnific-popup.css"> <!--for pop-up effects-->
+    <link rel="stylesheet" href="css/css/aos.css"> <!-- for animate on scroll-->
+    <link rel="stylesheet" href="css/css/bootstrap-datepicker.css"> 
+    <link rel="stylesheet" href="css/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/css/flaticon.css">
+    <link rel="stylesheet" href="css/css/icomoon.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/css/sponsor-form.css"> <!--main-->
+
+    <!--font-->
+    <link href='https://fonts.googleapis.com/css?family=Shrikhand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Yeseva One' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+
+        <!-- Toggler/collapsing button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Centered Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about-us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#event-schedule">Event Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support-us.html">Support Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+  <section class="eventdt-hero-section">
+    <div class="eventdt-container">
+      <h1 class="eventdt-hero-title">Sponsor Registration</h1>
+      <nav class="eventdt-breadcrumb">
+        <a href="index.html">Home</a> / <a href="support-us.html">Support Us</a> / Sponsor Registration
+      </nav>
+    </div>
+  </section>
+
+        <!-- SPONSOR FORM-->
+        <section class="sponsor-section">
+            <h2>Become a Sponsor</h2>
+            <p>Your support helps us make a difference!</p>
+            <form id="sponsor-form" class="sponsor-form">
+                <!-- Name -->
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+        
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+        
+                <!-- Phone -->
+                <div class="input-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+        
+                <!-- Organisation -->
+                <div class="input-group">
+                    <label for="organisation">Organisation:</label>
+                    <input type="text" id="organisation" name="organisation" placeholder="Enter your organisation name" required>
+                </div>
+        
+                <!-- Sponsor Type -->
+                <div class="input-group">
+                    <label for="sponsor-type">Sponsor Type:</label>
+                    <select id="sponsor-type" name="sponsor-type" required>
+                        <option value="">Select Sponsor Type</option>
+                        <option value="in-kind">In-Kind</option>
+                        <option value="monetary">Monetary</option>
+                    </select>
+                </div>
+        
+                <!-- In-Kind Sponsor Fields -->
+                <div id="in-kind-fields" class="conditional-fields">
+                    <!-- List of Items -->
+                    <div class="input-group">
+                        <label for="items">List of Items Sponsored:</label>
+                        <textarea id="items" name="items" placeholder="List the items you are sponsoring" rows="4"></textarea>
+                    </div>
+
+                <!-- Logistics Section -->
+                <div class="input-group">
+                    <br\>
+                    <label for="logistics">Select Logistics Option:</label>
+                    <select id="logistics" name="logistics" onchange="toggleLogisticsFields()">
+                        <option value="choose">Choose here...</option>
+                        <option value="pickup">Pick-Up</option>
+                        <option value="delivery">Delivery</option>
+                    </select>
+                </div>
+
+                <div id="pickup-location" class="input-group" style="display: none;">
+                    <label for="pickup-location">Pick-Up Location:</label>
+                    <input type="text" id="pickup-location-input" name="pickup-location" placeholder="Enter Pick-Up Location">
+                </div>
+
+                <div id="delivery-info" class="input-group" style="display: none;">
+                    <label for="delivery-location">Drop-Off Location:</label>
+                    <input type="text" id="delivery-location" name="delivery-location" value="Padang Kawad, USM" readonly>
+
+                    <label for="delivery-time">Time:</label>
+                    <input type="text" id="delivery-time" name="delivery-time" value="10:00 AM" readonly>
+                </div>
+        
+                    <!-- Upload Image -->
+                    <div class="input-group">
+                        <label for="items-image">Upload Image of Items:</label>
+                        <input type="file" id="items-image" name="items-image" accept="image/*">
+                    </div>
+                </div>
+        
+                <!-- Monetary Sponsor Fields -->
+                <div id="monetary-fields" class="conditional-fields">
+                    <!-- Sponsorship Package -->
+                    <div class="package-container">
+                        <!-- Insert Sponsorship Package Table -->
+                        <h3>Sponsorship Benefits</h3>
+                        <div class="container2">
+                            <table>
+                                <tr class="header">
+                                    <th>PACKAGE</th>
+                                    <th>PLATINUM</th>
+                                    <th>DIAMOND</th>
+                                    <th>GOLD</th>
+                                    <th>SILVER</th>
+                                </tr>
+                                <tr>
+                                    <td>MONETARY VALUE (RM)</td>
+                                    <td>3000</td>
+                                    <td>2000</td>
+                                    <td>1000</td>
+                                    <td>500</td>
+                                </tr>
+                                <tr>
+                                    <td>NUMBER OF SPONSORS (LIMIT)</td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>unlimited</td>
+                                </tr>
+                                <tr class="sub-header">
+                                    <th colspan="6">PHYSICAL BENEFITS</th>
+                                </tr>
+                                <tr>
+                                    <td>INVITATION TO HOPE 2024 CLOSING CEREMONY</td>
+                                    <td>2 representatives</td>
+                                    <td>1 representative</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Closing Ceremony Speech (5 Minutes)</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Company Logo on HOPE Committees T-Shirt</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Company Promotion at Physical Event (Stand up Banner)</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                </tr>
+                                <tr>
+                                    <td>Company Physical Banner Placement</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                </tr>
+                                <tr>
+                                    <td>Company Corporate Video will be played during HOPE</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                </tr>
+                                <tr>
+                                    <td>Logo Placement in Event Banner (Physical)</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                </tr>
+                                <tr>
+                                    <td>Logo Placement on Committee and Participants Name Card</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                </tr>
+                                <tr class="sub-header">
+                                    <th colspan="6">VIRTUAL BENEFITS</th>
+                                </tr>
+                                <tr>
+                                    <td>Company Appearance in Event Promotion Video Instagram, Facebook, LinkedIn</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                </tr>
+                                <tr>
+                                    <td>E-Certificate as a Token of Appreciation</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                    <td class="checkmark">&#10003;</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Package -->
+                    <div class="input-group">
+                        <label for="sponsor-package">Package Available:</label>
+                        <select id="sponsor-package" name="package" required>
+                            <option value="">Select your Package..</option>
+                            <option value="platinum">Platinum</option>
+                            <option value="diamond">Diamond</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">Silver</option>
+                        </select>
+                    </div>
+  
+                    <!-- QR Code -->
+                    <div class="input-group">
+                       <label>QR Code for Payment:</label>
+                          <img src="images/QR.png" alt="QR Code" class="qr-code">
+                    </div>
+        
+                    <!-- Upload Receipt -->
+                    <div class="input-group">
+                        <label for="receipt">Upload Receipt:</label>
+                        <input type="file" id="receipt" name="receipt" accept="image/*">
+                    </div>
+                </div>
+        
+            <!-- Submit Button -->
+            <button type="submit" class="sponsor-submit-btn">Submit</button>
+        </form>
+        
+            <!-- Thank You Message -->
+            <div id="thank-you-message" class="thank-you" style="display: none;">
+                <h3>Thank You!</h3>
+                <p>We appreciate your contribution and will contact you shortly!</p>
+            </div>
+        </section>
+        
+            <!-- Footer Section -->
+            <footer class="footer-section">
+                <div class="container text-center">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                </div>
+            </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const sponsorType = document.getElementById("sponsor-type");
+                const inKindFields = document.getElementById("in-kind-fields");
+                const monetaryFields = document.getElementById("monetary-fields");
+                const sponsorForm = document.getElementById("sponsor-form");
+                const thankYouMessage = document.getElementById("thank-you-message");
+        
+                // Hide all conditional fields initially
+                inKindFields.style.display = "none";
+                monetaryFields.style.display = "none";
+        
+                // Show/hide fields based on sponsor type selection
+                sponsorType.addEventListener("change", () => {
+                    const value = sponsorType.value;
+                    if (value === "in-kind") {
+                        inKindFields.style.display = "block";
+                        monetaryFields.style.display = "none";
+                    } else if (value === "monetary") {
+                        inKindFields.style.display = "none";
+                        monetaryFields.style.display = "block";
+                    } else {
+                        inKindFields.style.display = "none";
+                        monetaryFields.style.display = "none";
+                    }
+                });
+        
+                // Handle form submission
+                sponsorForm.addEventListener("submit", (event) => {
+                    event.preventDefault();
+                    sponsorForm.style.display = "none";
+                    thankYouMessage.style.display = "block";
+                });
+            });
+
+            // Function to toggle fields based on logistics option selected
+            function toggleLogisticsFields() {
+                var logisticsOption = document.getElementById('logistics').value;
+                var pickupLocation = document.getElementById('pickup-location');
+                var deliveryInfo = document.getElementById('delivery-info');
+
+                if (logisticsOption === 'pickup') {
+                    pickupLocation.style.display = 'block';  // Show Pick-Up Location field
+                    deliveryInfo.style.display = 'none';     // Hide Delivery Info fields
+                } else {
+                    pickupLocation.style.display = 'none';   // Hide Pick-Up Location field
+                    deliveryInfo.style.display = 'block';    // Show Delivery Info fields
+                }
+            }
+        </script>
+
+</body>
+</html>

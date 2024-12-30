@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOPE 3.0 | Add Events </title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="../main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .table-wrapper {
+        margin-left: 250px; /* Same as sidebar width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 20px;
+        background: #A085F9;
+    }
+    .table-container {
+        width: 100%;
+        max-width: 1200px;
+        overflow-x: auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        border-radius: 8px;
+    }
+    .table-title {
+        margin: 0 0 20px;
+        font-size: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .table-title h2 {
+        margin: 0;
+    }
+    .table-title .add-new {
+        font-weight: bold;
+        font-size: 14px;
+        min-width: 100px;
+        border-radius: 50px;
+    }
+    table.table {
+        table-layout: auto;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table.table th, table.table td {
+        border: 1px solid #e9e9e9;
+        padding: 12px 15px;
+        text-align: left;
+        word-wrap: break-word;
+    }
+    table.table th {
+        background: #f4f4f4;
+    }
+    table.table td a {
+        margin: 0 5px;
+        cursor: pointer;
+    }
+</style>
+
+<!-- JavaScript -->
+ 
+<script type="text/javascript">
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    var actions = $("table td:last-child").html();
+    $(".add-new").click(function(){
+        $(this).attr("disabled", "disabled");
+        var row = '<tr>' +
+            '<td><input type="text" class="form-control" name="EventID" id="eventID"></td>' +
+            '<td><input type="text" class="form-control" name="EventName" id="name"></td>' +
+            '<td><input type="text" class="form-control" name="EventDescription" id="desc"></td>' +
+            '<td><input type="text" class="form-control" name="fee" id="fee"></td>' +
+            '<td><input type="text" class="form-control" name="location" id="location"></td>' +
+            '<td><input type="text" class="form-control" name="date" id="date"></td>' +
+            '<td><input type="text" class="form-control" name="time" id="time"></td>' +
+            '<td>' + actions + '</td>' +
+        '</tr>';
+        $("table").append(row);        
+        $("table tbody tr:last-child").find(".add, .edit").toggle();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $(document).on("click", ".add", function(){
+        var empty = false;
+        var input = $(this).parents("tr").find('input[type="text"]');
+        input.each(function(){
+            if(!$(this).val()){
+                $(this).addClass("error");
+                empty = true;
+            } else{
+                $(this).removeClass("error");
+            }
+        });
+        $(this).parents("tr").find(".error").first().focus();
+        if(!empty){
+            input.each(function(){
+                $(this).parent("td").html($(this).val());
+            });
+            $(this).parents("tr").find(".add, .edit").toggle();
+            $(".add-new").removeAttr("disabled");
+        }
+    });
+
+    $(document).on("click", ".edit", function(){        
+        $(this).parents("tr").find("td:not(:last-child)").each(function(){
+            $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+        });        
+        $(this).parents("tr").find(".add, .edit").toggle();
+        $(".add-new").attr("disabled", "disabled");
+    });
+
+    $(document).on("click", ".delete", function(){
+        $(this).parents("tr").remove();
+        $(".add-new").removeAttr("disabled");
+    });
+});
+</script>
+</head>
+<body>
+    <!-- Sidebar (will be remove after setup server) --> 
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="../Admin/images/Logo.png" alt="Logo" class="logo-image">
+            <span class="logo_name">HOPE 3.0</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="home.html" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="..\Admin\user.html">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="..\Admin\events.html">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Event list</span>
+                </a>
+            </li>
+            <li>
+                <a href="..\Admin\participants.html">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Participants</span>
+                </a>
+            </li>
+            <li>
+                <a href="..\Admin\donations.html">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Donations</span>
+                </a>
+            </li>
+            <li>
+                <a href="..\Admin\collaborators.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Collaborators</span>
+                </a>
+            </li>
+            <li>
+                <button class="dropdown-btn">
+                    <i class="bx bx-money"></i>
+                    <span class="links_name">Sponsors</span>
+                    <i class="bx bx-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a href="..\Admin\Sponsors\in-kind.html">In-Kind</a>
+                    <a href="..\Admin\Sponsors\monetary.html">Monetary</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="table-wrapper">
+        <div class="table-container">
+            <div class="table-title">
+                <h2>Event <b>List</b></h2>
+                <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Event ID</th>
+                        <th>Event Name</th>
+                        <th>Description</th>
+                        <th>Fee</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Breast Cancer Screening</td>
+                        <td>Free breast cancer screening for females above 25 years old.</td>
+                        <td>Free</td>
+                        <td>Dewan Pelajar C, USM</td>
+                        <td><input type="date" class="form-control" value="2024-05-03"></td>
+                        <td><input type="time" class="form-control" value="09:30"></td>
+                        <td>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Lung Cancer Screening</td>
+                        <td>Free Lung cancer screening for all USM students and the public.</td>
+                        <td>Free</td>
+                        <td>Dewan Pelajar C, USM</td>
+                        <td><input type="date" class="form-control" value="2024-05-03"></td>
+                        <td><input type="time" class="form-control" value="09:30"></td>
+                        <td>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Kite Flying Activity</td>
+                        <td>Fun and back to childhood game.</td>
+                        <td>RM5</td>
+                        <td>Padang Kawad, USM</td>
+                        <td><input type="date" class="form-control" value="2024-05-03"></td>
+                        <td><input type="time" class="form-control" value="09:30"></td>
+                        <td>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>Movie Night</td>
+                        <td>Amazing and kid friendly movie night for everyone.</td>
+                        <td>RM5</td>
+                        <td>Bilik Kuliah C, USM</td>
+                        <td><input type="date" class="form-control" value="2024-05-03"></td>
+                        <td><input type="time" class="form-control" value="09:30"></td>
+                        <td>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>05</td>
+                        <td>Online Talk</td>
+                        <td>Awareness talk by Dr from the cancer fields.</td>
+                        <td>Free</td>
+                        <td>Cisco Webex Online Meeting</td>
+                        <td><input type="date" class="form-control" value="2024-05-03"></td>
+                        <td><input type="time" class="form-control" value="09:30"></td>
+                        <td>
+                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                        </td>
+                    </tr>     
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- JavaScript for Sidebar Dropdown -->
+    <script>
+        document.querySelectorAll('.dropdown-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const dropdownContainer = button.nextElementSibling;
+                dropdownContainer.style.display = 
+                    dropdownContainer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

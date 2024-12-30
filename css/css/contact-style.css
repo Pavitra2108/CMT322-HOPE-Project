@@ -1,0 +1,190 @@
+/* Contact Section Styles */
+.contact-section {
+    background-color: white;
+    padding: 10px;
+}
+
+/* Contact Information Styles */
+.contact-info {
+    padding-left: 3rem;
+    background-color: white;
+    border-radius: 20px;
+    border-color: #A085F9;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    margin-bottom: 1rem;
+    font-family: 'Shirkand';
+    color: #333;
+}
+
+
+.contact-info h6 {
+    margin-bottom: 1rem;
+    font-family: 'Yeseva One';
+    color: #333;
+}
+
+.contact-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Yeseva One';
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    color: #A085F9;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+}
+
+.info-content span {
+    color: #333;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.info-content {
+    font-family: 'Yeseva One';
+}
+
+.info-content p {
+    color: #666;
+    font-family: 'Yeseva One';
+    margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+    .contact-section {
+        padding: 60px 0;
+    }
+    
+    .contact-form,
+    .contact-info {
+        margin-bottom: 2rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+    
+    .contact-form,
+    .contact-info {
+        padding: 1.5rem;
+    }
+    
+    .info-item {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact-section {
+        padding: 30px 0;
+    }
+    
+    .form-control {
+        margin-bottom: 1rem;
+    }
+    
+    .send-message-btn {
+        width: 100%;
+    }
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info-heading {
+    font-size: 2rem; /* Adjust as needed */
+    font-weight: bold;
+    font-family: "Shirkand";
+    color: #333; /* Match the color */
+    margin-bottom: 1rem;
+}
+
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.contact-card img.contact-image {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border-color:#A085F9;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.contact-card h6 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Yeseva One;
+    margin: 5px 0;
+    color: #333;
+}
+
+.contact-card p {
+    font-size: 14px;
+    font-family: Yeseva One;
+    color: #555;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.contact-cards .contact-card .phone-number {
+    font-size: 14px;
+    font-family: Yeseva One;
+    color: #000; 
+    margin-right: 10px;
+}
+
+.contact-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Layout for Bottom Row */
+.contact-cards .d-flex {
+    gap: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 767.98px) {
+    .contact-card {
+        width: 100%;
+    }
+
+    .contact-cards .d-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

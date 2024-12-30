@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HOPE 3.0</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!---->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/animate.css"> <!--for sliding animations effects-->
+    <link rel="stylesheet" href="css/css/owl.carousel.min.css"> <!--for slider effect-->
+    <link rel="stylesheet" href="css/css/owl.theme.default.min.css"> <!--for slider effects-->
+    <link rel="stylesheet" href="css/css/magnific-popup.css"> <!--for pop-up effects-->
+    <link rel="stylesheet" href="css/css/aos.css"> <!-- for animate on scroll-->
+    <link rel="stylesheet" href="css/css/bootstrap-datepicker.css"> 
+    <link rel="stylesheet" href="css/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/css/flaticon.css">
+    <link rel="stylesheet" href="css/css/icomoon.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/css/donation-form.css"> <!--main-->
+
+    <!--font-->
+    <link href='https://fonts.googleapis.com/css?family=Shrikhand' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Yeseva One' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+
+        <!-- Toggler/collapsing button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Centered Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about-us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#event-schedule">Event Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support-us.html">Support Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Hero Section -->
+  <section class="eventdt-hero-section">
+    <div class="eventdt-container">
+      <h1 class="eventdt-hero-title">Donation</h1>
+      <nav class="eventdt-breadcrumb">
+        <a href="index.html">Home</a> / <a href="support-us.html">Support Us</a> / Donation Form
+      </nav>
+    </div>
+  </section>
+
+    <!-- DONATION FORM -->
+    <section class="donation-section">
+        <h2>Donate Now</h2>
+        <p>Your Contribution is very much appreciated!</p>
+        <form id="donation-form" class="donation-form">
+            <!-- Name -->
+            <div class="input-group">
+                <label for="donor-name">Name:</label>
+                <input type="text" id="donor-name" name="name" placeholder="Enter your name" required>
+            </div>
+    
+            <!-- Email -->
+            <div class="input-group">
+                <label for="donor-email">Email Address:</label>
+                <input type="email" id="donor-email" name="email" placeholder="Enter your email" required>
+            </div>
+    
+            <!-- Phone Number -->
+            <div class="input-group">
+                <label for="donor-phone">Phone Number:</label>
+                <input type="tel" id="donor-phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+    
+            <!-- Occupation -->
+            <div class="input-group">
+                <label for="donor-occupation">Occupation:</label>
+                <select id="donor-occupation" name="occupation" required>
+                    <option value="">Select your occupation</option>
+                    <option value="student">Student</option>
+                    <option value="public">Public</option>
+                </select>
+            </div>
+    
+            <!-- Student-Specific Fields -->
+            <div class="student-donation-fields">
+                <div class="input-group">
+                    <label for="donor-school">School:</label>
+                    <input type="text" id="donor-school" name="school" placeholder="Enter your school name">
+                </div>
+                <div class="input-group">
+                    <label for="donor-matric">Matric Number:</label>
+                    <input type="text" id="donor-matric" name="matric" placeholder="Enter your matric number">
+                </div>
+            </div>
+    
+            <!-- QR Code -->
+            <div class="input-group">
+                 <label>QR Code for Payment:</label>
+                    <img src="images/QR.png" alt="QR Code" class="qr-code">
+            </div>
+    
+            <!-- Upload Receipt -->
+            <div class="input-group">
+                <label for="donation-receipt">Upload Receipt:</label>
+                <input type="file" id="donation-receipt" name="receipt" accept="image/*" required>
+            </div>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="donation-submit-btn">Submit</button>
+        </form>
+    
+        <!-- Thank You Message -->
+        <div id="donation-thank-you" class="donation-thank-you" style="display: none;">
+            <h3>Thank You!</h3>
+            <p>Your donation has been received. We will contact you soon.</p>
+        </div>
+    </section>
+
+      <!-- Footer Section -->
+      <footer class="footer-section">
+        <div class="container text-center">
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        </div>
+    </footer>
+    
+    <script>
+
+        //DONATION FORM
+        document.addEventListener("DOMContentLoaded", () => {
+            const occupationSelect = document.getElementById("donor-occupation");
+            const studentFields = document.querySelector(".student-donation-fields");
+            const form = document.getElementById("donation-form");
+            const thankYouMessage = document.getElementById("donation-thank-you");
+    
+            // Hide student fields by default
+            studentFields.style.display = "none";
+    
+            // Show/hide student fields based on occupation
+            occupationSelect.addEventListener("change", (event) => {
+                const selectedValue = event.target.value;
+    
+                if (selectedValue === "student") {
+                    studentFields.style.display = "block";
+                    studentFields.querySelectorAll("input").forEach(input => input.setAttribute("required", "required"));
+                } else {
+                    studentFields.style.display = "none";
+                    studentFields.querySelectorAll("input").forEach(input => input.removeAttribute("required"));
+                }
+            });
+    
+            // Handle form submission
+            form.addEventListener("submit", (event) => {
+                event.preventDefault(); // Prevent actual form submission
+                form.style.display = "none"; // Hide the form
+                thankYouMessage.style.display = "block"; // Show the thank-you message
+            });
+        });
+
+    </script>
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,546 @@
+/* Navigation Bar */
+.navbar {
+    background: transparent;
+    box-shadow: none;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .navbar-brand img {
+    max-height: 60px;
+    margin-left: 10px;
+  }
+  
+  .navbar-toggler {
+    border-color: #FFFFFF;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  .navbar-nav {
+    margin: 0 auto;
+  }
+  
+  .nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-right: 40px;
+  }
+  
+  .nav-link:hover {
+    color: #E0B7FD !important;
+  }
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+        justify-content: flex-end;
+        text-align: right;
+    }
+    .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 0.5rem 1.5rem; /* Adjust padding for spacing in dropdown */
+    }
+  }
+
+/* Support Section */
+.support-section {
+    height: 96vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+    padding: 0 2rem;
+    margin-top: 30px;
+    position: relative; /* Add relative positioning for the overlay */
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.926), rgba(0, 0, 0, 0)); /* Black to transparent gradient */
+    z-index: 1;
+}
+
+
+  /* Content */
+  .support-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    z-index: 2; /* Keep content in front of the overlay */
+    position: relative;
+  }
+  
+  /* Heading */
+  .support-heading {
+    font-size: 5rem;
+    font-weight: bold;
+    font-family:  'Shrikhand';
+    margin-bottom: 100px;
+    margin-top: 120px;
+    margin-left: 180px;
+    text-shadow: 1px 1px 10px black;
+    text-align: center;
+    padding-right: 10%;
+    z-index: 3; /* Ensure the heading is in front */
+    position: relative;
+  }
+  
+  /* Subheading */
+  .support-subheading {
+    font-size: 2rem;
+    margin-top: -80px;
+    font-family: Arial;
+    text-shadow: 1px 1px black;
+    margin-bottom: 60px;
+    text-align: center;
+    margin-left: 180px;
+    padding-right: 10%;
+    z-index: 3; /* Ensure the subheading is in front */
+    position: relative;
+  }
+  
+  /* Center button container on smaller screens */
+  .support-button-container {
+    margin-top: 20px;
+  }
+  
+  .btn-support {
+    background-color: #A085F9; /* Purple background */
+    color: #fff; /* White text */
+    padding: 12px 24px; /* Slightly larger padding */
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 25px; /* Fully rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    z-index: 3; /* Ensure the subheading is in front */
+    position: relative;
+  }
+  
+  .btn-support:hover {
+    background-color: #8566f1; /* Darker purple on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+  }
+
+/* Action Section */
+/* General Styling */
+.Action {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.Action h2 {
+    font-size: 32px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    text-shadow: #6f1111;
+}
+
+.Action p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Cards Styling */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.card {
+    background-color: #c8b6ff;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border: 1px solid #c8b6ff;
+    position: relative;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.card i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #fff; /* Set icon color to white initially */
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff; /* Set heading text color to white initially */
+}
+
+.card p {
+    font-size: 14px;
+    color: #fff; /* Set paragraph text color to white initially */
+}
+
+.card .cta {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+    color: #35207a;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+/* Highlighted Color for Active Cards */
+.card:nth-child(2) {
+    background-color: #8f71f5;
+}
+
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+}
+
+.card:hover .card-link {
+    color: #fff;
+}
+
+.card:hover .card i {
+    color: #000; /* Change icon color to black on hover */
+}
+
+.card:hover .card h3 {
+    color: #000; /* Change heading text color to black on hover */
+}
+
+.card:hover .card p {
+    color: #000; /* Change paragraph text color to black on hover */
+}
+
+/* Hover Effect for CTA Text */
+.card:hover .cta {
+    color: #fff;
+}
+
+/* Hover Color Change for Each Card */
+.card:nth-child(1):hover .cta {
+    color: #FFD700; /* Gold color for Sponsor */
+}
+
+.card:nth-child(2):hover .cta {
+    color: #FF6347; /* Red color for Donate */
+}
+
+.card:nth-child(3):hover .cta {
+    color: #32CD32; /* Green color for Collaborate */
+}
+
+
+
+/*Difference Section*/
+
+.difference {
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    padding-right: 50px;
+    background-color: #f9f9f9;
+    justify-content: space-between; /* Ensures content and image are spaced */
+}
+
+.difference .text {
+    flex: 1.5;
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Set font to Arial */
+}
+
+.difference .text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 150px;
+    margin-bottom: 50px; /* Increased spacing below the heading */
+    color: #333;
+}
+
+.difference .text p {
+    font-size: 17px;
+    margin-left: 150px;
+    color: #666;
+    margin-bottom: 50px; /* Increased spacing below the paragraph */
+    text-align: justify;
+}
+
+.difference .text .btn {
+    background-color: #A085F9; /* Updated to match the color theme */
+    color: #fff; /* White text for contrast */
+    padding: 10px 20px;
+    margin-left: 150px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners for the button */
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions for hover effect */
+    margin-right: 10px; /* Add space between buttons */
+    margin-top: 20px; /* Added space above the button for more separation */
+}
+
+.difference .text .btn:hover {
+    background-color: #6F4BFE; /* Darker shade for hover effect */
+    transform: translateY(-4px); /* Slight lift on hover */
+}
+
+.difference .image {
+    flex: 1; /* Take up remaining space */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center;
+    margin-left: 50px;
+    padding-left: 5px; /* Space between image and text */
+}
+
+.difference .image img {
+    max-width: 80%; /* Reduce image size */
+    height: auto;
+    border-radius: 5px; /* Rounded corners for the image */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.903)); /* Shadow applied directly to the image */
+}
+
+/* Popup Card Styling */
+.info-card {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+}
+
+.info-card .card-content h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-card .card-content p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.info-card .close-btn {
+    display: inline-block;
+    background-color: #A085F9;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.info-card .close-btn:hover {
+    background-color: #6F4BFE;
+}
+
+#learn-more-btn {
+    background-color: #A085F9;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#learn-more-btn:hover {
+    background-color: #6F4BFE;
+}
+
+/* Dark Overlay (if you need a dimming background when the card is displayed) */
+.overlay2 {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+/*Urgent Section*/
+
+.urgent {
+    background: linear-gradient(to top, #8661ff, #f9f9f9); /* Gradient from purple to white */
+    color: #000000;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.urgent h2 {
+    font-size: 32px; /* Increased size for more emphasis */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.urgent p {
+    font-size: 16px;
+    color: #541b80; /* Softer color for text */
+    margin-bottom: 40px;
+}
+
+.urgent .progress {
+    display: flex;
+    padding: 150px;
+    justify-content: center;
+    align-items: center;
+    gap: 0; /* No gap between boxes */
+    background-color: transparent;
+}
+
+.urgent .progress .box {
+    background-color: #f0ebff; /* Light theme color */
+    color: #333;
+    padding: 20px;
+    width: 300px; /* Increased width for elongation */
+    text-align: center;
+    border-right: none; /* Remove border between left box and middle box */
+    border-radius: 5px 0 0 5px; /* Rounded corners for the left box */
+    font-family: Arial;
+    font-weight: bolder;
+}
+
+.urgent .progress .middle-box {
+    background-color: #d0c2ff; /* Theme highlight for middle box */
+    color: #000000;
+    padding: 30px; /* Larger padding for emphasis */
+    width: 400px; /* Increased width to make it larger than the side boxes */
+    text-align: center;
+    font-family: Arial;
+    font-weight: bolder;
+    z-index: 1; /* Bring middle box to the front */
+}
+
+.urgent .progress .right-box {
+    background-color: #f0ebff; /* Light theme color */
+    color: #333;
+    padding: 20px;
+    width: 300px; /* Increased width for elongation */
+    text-align: center;
+    border-left: none; /* Remove border between right box and middle box */
+    border-radius: 0 5px 5px 0; /* Rounded corners for the right box */
+    font-family: Arial;
+    font-weight: bolder;
+}
+
+.urgent .progress .box h3,
+.urgent .progress .middle-box h3,
+.urgent .progress .right-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.urgent .progress .box p,
+.urgent .progress .middle-box p,
+.urgent .progress .right-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Default Box Styles */
+.urgent .progress .box,
+.urgent .progress .middle-box,
+.urgent .progress .right-box {
+    transition: all 0.3s ease; /* Smooth transition for width */
+    cursor: pointer; /* Indicate clickability */
+    position: relative; /* Allow positioning of the additional text */
+}
+
+/* Elongated Box Styles */
+.urgent .progress .box.clicked,
+.urgent .progress .middle-box.clicked,
+.urgent .progress .right-box.clicked {
+    width: 300px; /* Elongate horizontally */
+    height: 250px; /* Elongate vertically */
+    background-color: #e0d4ff; /* Slightly darker color for active state */
+    transform: scale(1.1); /* Add slight scaling for emphasis */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for focus */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack the elements vertically */
+}
+
+/* Show Text When Elongated */
+.urgent .progress .box.clicked .extra-text,
+.urgent .progress .middle-box.clicked .extra-text,
+.urgent .progress .right-box.clicked .extra-text {
+    display: block; /* Show the text */
+}
+
+/* Centering content inside the box when clicked */
+.urgent .progress .box.clicked h3,
+.urgent .progress .middle-box.clicked h3,
+.urgent .progress .right-box.clicked h3,
+.urgent .progress .box.clicked p,
+.urgent .progress .middle-box.clicked p,
+.urgent .progress .right-box.clicked p {
+    display: flex;
+    font-size: 30px;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    flex-direction: column; /* Ensure the text is stacked vertically */
+    height: 100%; /* Ensure content fills the entire height of the box */
+    text-align: center; /* Ensure text is aligned in the center */
+}
+
+/* Footer Section */
+.footer-section {
+    background-color: #A085F9; /* Match the theme color */
+    padding: 20px 0; /* Add some vertical spacing */
+  }
+  
+  .footer-section .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+  }
+  
+  .footer-section .social-icons a {
+    color: white; /* Icon color */
+    font-size: 1.5rem; /* Icon size */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section .social-icons a:hover {
+    color: black; /* Highlight color on hover */
+  }
